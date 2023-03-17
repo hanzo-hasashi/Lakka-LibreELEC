@@ -1,0 +1,24 @@
+# This helps to connect to newer revision (1914) Xbox One Series S/X Controller on Raspberry Pi 4
+# By using the default connection menu form Lakka, the Xbox Controller light keeps blinking after pairing, hence use the below guide (SSH to the Pi 4) and follow along
+
+
+> bluetoothctl
+
+[bluetooth]# power on
+[bluetooth]# agent on
+[bluetooth]# default-agent
+[bluetooth]# scan on
+[NEW] Device XX:XX:XX:XX:XX:XX 
+[bluetooth]# scan off
+[bluetooth]# agent off
+[bluetooth]# power off
+
+[bluetooth]# power on
+[bluetooth]# agent on
+[bluetooth]# default-agent
+[bluetooth]# trust XX:XX:XX:XX:XX:XX
+[bluetooth]# pair XX:XX:XX:XX:XX:XX
+Attempting to pair with XX:XX:XX:XX:XX:XX
+[CHG] Device XX:XX:XX:XX:XX:XX Connected: yes
+
+(Optional) [bluetooth]# connect XX:XX:XX:XX:XX:XX
